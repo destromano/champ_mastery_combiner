@@ -1,5 +1,4 @@
 import csv
-import pprint
 
 champMastery = {}
 with open('input.csv', newline='') as csvfile:
@@ -12,6 +11,8 @@ with open('input.csv', newline='') as csvfile:
 
         champMastery[champ] = champMastery.get(champ, 0) + mastery
 
+print("\n\n")
+
 # sort dictionary by values and print
-pp = pprint.PrettyPrinter(indent=4)
-pp.pprint(sorted(champMastery.items(), key=lambda x:x[1], reverse=True))
+for k,v in sorted(champMastery.items(), key=lambda x:x[1], reverse=True):
+    print("{}: {}".format(k, v))
